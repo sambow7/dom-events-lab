@@ -8,7 +8,6 @@ let inputOperator = "";
 let inputNumber1 = "";
 let inputNumber2 = "";
 let clearCalculator = "";
-let calculatorTotal = 0;
 
 /*------------------------ Cached Element References ------------------------*/
 
@@ -16,8 +15,22 @@ let calculatorTotal = 0;
 
 /*-------------------------------- Functions --------------------------------*/
 
+
+// calculator.addEventListener('click', (event) => {
+//   console.log(event.target.innerText);
+//   // Example
+//   if (event.target.classList.contains('number')) {
+//     // Do something with a number
+//   }
+
+//   // Example
+//   if (event.target.innerText === '*') {
+//     return sum = inputNumber1, inputNumber2
+//   }
+// });
+
 buttons.forEach((button) => {
-  button.addEventListener('click', pressButtonclick)
+  button.addEventListener('click', pressButtonclick);
   // This log is for testing purposes to verify we're getting the correct value
   // console.log(event.target.innerText);
   // Future logic to capture the button's value would go here...
@@ -25,8 +38,8 @@ buttons.forEach((button) => {
   function pressButtonclick(event) {
     const buttonClicked = event.target.innerText;
     if (!isNaN(parseFloat(buttonClicked))) {
-      displayValue += buttonClicked;~
-      display.innerText += displayValue;
+      displayValue += buttonClicked;
+      display.innerText = displayValue;
     } else if (buttonClicked) {
       switch (buttonClicked) {
         case "+":
@@ -42,23 +55,24 @@ buttons.forEach((button) => {
           return inputNumber1 / inputNumber2;
           break;
         case "=":
-          return sumFunction;
+          return 
           break;
         case "C":
-          return displayValue = "";
+          return displayValue = ""
           break;
+          default:
       }
     }
   }
 });
 
-function sumFunction(sum) {
-  let result = -1;
-  let i;
-  for (i = 1; i < arguments.length; i++) {
-    result += arguments[i] + sum;
-  }
-  return result;
-}
+// function sumFunction(sum) {
+//   let result = 0;
+//   let i;
+//   for (i = 1; i < arguments.length; i++) {
+//     result += arguments[i] + sum;
+//   }
+//   return result;
+// }
 
-console.log(sumFunction("====== SUM of numbers ===="1,2,5))
+// console.log("SUM FUNCTION:",sumFunction(1,2))
