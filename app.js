@@ -1,7 +1,8 @@
 /*-------------------------------- Constants --------------------------------*/
+// const calculator = document.querySelector("#calculator");
 const buttons = document.querySelectorAll(".button");
-const calculator = document.querySelector("#calculator");
 const display = document.querySelector(".display");
+const clearButtonElement = document.querySelector("#clear-button")
 /*-------------------------------- Variables --------------------------------*/
 let displayValue = "";
 let inputOperator = "";
@@ -12,6 +13,12 @@ let clearCalculator = "";
 /*------------------------ Cached Element References ------------------------*/
 
 /*----------------------------- Event Listeners -----------------------------*/
+
+clearButtonElement.addEventListener("click", () => {
+  function clearButton() {
+    
+  }
+})
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -31,10 +38,6 @@ let clearCalculator = "";
 
 buttons.forEach((button) => {
   button.addEventListener('click', pressButtonclick);
-  // This log is for testing purposes to verify we're getting the correct value
-  // console.log(event.target.innerText);
-  // Future logic to capture the button's value would go here...
-
   function pressButtonclick(event) {
     const buttonClicked = event.target.innerText;
     if (!isNaN(parseFloat(buttonClicked))) {
@@ -43,36 +46,63 @@ buttons.forEach((button) => {
     } else if (buttonClicked) {
       switch (buttonClicked) {
         case "+":
-          return inputNumber1 + inputNumber2;
+          return displayValue = "" ;
           break;
         case "-":
-          return inputNumber1 - inputNumber2;
+          return displayValue = ""  ;
           break;
         case "*":
-          return inputNumber1 * inputNumber2;
+          return displayValue = ""  ;
           break;
         case "/":
-          return inputNumber1 / inputNumber2;
+          return displayValue = ""  ;
           break;
         case "=":
-          return 
+          return displayValue = ""  ;
           break;
         case "C":
-          return displayValue = ""
+          return displayValue = ""  ;
           break;
-          default:
+          
       }
     }
   }
 });
 
-// function sumFunction(sum) {
-//   let result = 0;
-//   let i;
-//   for (i = 1; i < arguments.length; i++) {
-//     result += arguments[i] + sum;
-//   }
-//   return result;
-// }
+function sumFunction(sum) {
+  let result = 0;
+  let i;
+  for (i = 1; i < arguments.length; i++) {
+    result += arguments[i] + sum;
+  }
+  return result;
+}
 
 // console.log("SUM FUNCTION:",sumFunction(1,2))
+
+function addOperator(inputNumber1, inputNumber2) {
+  let  num1 = parseFloat(document.getElementById(num1).value);
+  let  num2 = parseFloat(document.getElementById(num2).value);
+  let sum = num1 + num2;
+  document.getElementById("result").innerText = "Sum: " + sum
+  // return inputNumber1 + inputNumber2;
+}
+console.log(" + ",addOperator(1,3));
+
+function subtractOperator(inputNumber1, inputNumber2) {
+  return inputNumber1 - inputNumber2;
+}
+console.log(" - ",subtractOperator(2,4));
+
+function divideOperator(inputNumber1, inputNumber2) {
+  return inputNumber1 / inputNumber2;
+}
+console.log(" / ",divideOperator(2,4));
+
+function multiplyOperator(inputNumber1, inputNumber2) {
+  pressButtonclick
+  return inputNumber1 * inputNumber2;
+}
+console.log(" X ",multiplyOperator(2,3));
+
+
