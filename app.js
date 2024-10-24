@@ -1,108 +1,116 @@
 /*-------------------------------- Constants --------------------------------*/
 // const calculator = document.querySelector("#calculator");
-const buttons = document.querySelectorAll(".button");
-const display = document.querySelector(".display");
-const clearButtonElement = document.querySelector("#clear-button")
+
 /*-------------------------------- Variables --------------------------------*/
+// display
 let displayValue = "";
+// operator button
 let inputOperator = "";
+//  number button
 let inputNumber1 = "";
 let inputNumber2 = "";
-let clearCalculator = "";
+// result
+let result = "";
 
 /*------------------------ Cached Element References ------------------------*/
-
+const buttons = document.querySelectorAll(".button");
+const display = document.querySelector(".display");
 /*----------------------------- Event Listeners -----------------------------*/
-
-clearButtonElement.addEventListener("click", () => {
-  function clearButton() {
-    
-  }
-})
-
-/*-------------------------------- Functions --------------------------------*/
-
-
-// calculator.addEventListener('click', (event) => {
-//   console.log(event.target.innerText);
-//   // Example
-//   if (event.target.classList.contains('number')) {
-//     // Do something with a number
-//   }
-
-//   // Example
-//   if (event.target.innerText === '*') {
-//     return sum = inputNumber1, inputNumber2
-//   }
-// });
-
-buttons.forEach((button) => {
-  button.addEventListener('click', pressButtonclick);
-  function pressButtonclick(event) {
-    const buttonClicked = event.target.innerText;
-    if (!isNaN(parseFloat(buttonClicked))) {
-      displayValue += buttonClicked;
-      display.innerText = displayValue;
-    } else if (buttonClicked) {
-      switch (buttonClicked) {
-        case "+":
-          return displayValue = "" ;
-          break;
-        case "-":
-          return displayValue = ""  ;
-          break;
-        case "*":
-          return displayValue = ""  ;
-          break;
-        case "/":
-          return displayValue = ""  ;
-          break;
-        case "=":
-          return displayValue = ""  ;
-          break;
-        case "C":
-          return displayValue = ""  ;
-          break;
-          
-      }
-    }
-  }
+buttons.forEach((button, index) => {
+  button.addEventListener("click", handleButtonclick)
 });
 
-function sumFunction(sum) {
-  let result = 0;
-  let i;
-  for (i = 1; i < arguments.length; i++) {
-    result += arguments[i] + sum;
-  }
-  return result;
+/*-------------------------------- Functions --------------------------------*/
+function handleButtonclick(event) {
+  const clickedButtonvalue = event.target.innerText
+    // console.log(event.target.innerText)
+  if (clickedButtonvalue) {
+    displayValue += clickedButtonvalue;
+    display.innerText = displayValue;
+    // console.log(display.innerText) // i need to have if else conditon and check multiple scenerio for when fet the value, operator, and clear
+    } else if (clickedButtonvalue) {
+      
+      
+  } 
 }
 
-// console.log("SUM FUNCTION:",sumFunction(1,2))
+
+function handleNumberclicked(number) {
+  // const clickedNumbervalue = 
+}
+  
+  
+
+function handleOperatorclick(operator) {
+  // so i can only see the numbers display and not the operator display 
+}
+
+
+// Operator Functions:
 
 function addOperator(inputNumber1, inputNumber2) {
-  let  num1 = parseFloat(document.getElementById(num1).value);
-  let  num2 = parseFloat(document.getElementById(num2).value);
-  let sum = num1 + num2;
-  document.getElementById("result").innerText = "Sum: " + sum
-  // return inputNumber1 + inputNumber2;
+  return inputNumber1 + inputNumber2;
 }
-console.log(" + ",addOperator(1,3));
+// console.log(" + ",addOperator(2,4));
 
 function subtractOperator(inputNumber1, inputNumber2) {
   return inputNumber1 - inputNumber2;
 }
-console.log(" - ",subtractOperator(2,4));
+// console.log(" - ",subtractOperator(2,4));
 
 function divideOperator(inputNumber1, inputNumber2) {
   return inputNumber1 / inputNumber2;
 }
-console.log(" / ",divideOperator(2,4));
+// console.log(" / ",divideOperator(2,4));
 
 function multiplyOperator(inputNumber1, inputNumber2) {
-  pressButtonclick
   return inputNumber1 * inputNumber2;
 }
-console.log(" X ",multiplyOperator(2,3));
+// console.log(" X ",multiplyOperator(2,3));
 
+
+
+// buttons.forEach((button) => {
+//   button.addEventListener('click', pressButtonclick);
+//   function pressButtonclick(event) {
+//     const buttonClicked = event.target.innerText;
+//     if (!isNaN(parseFloat(buttonClicked))) {
+//       displayValue += buttonClicked;
+//       display.innerText = displayValue;
+//     } else if (buttonClicked) {
+//       switch (buttonClicked) {
+//         case "+":
+//           return displayValue = " + "  ;
+//           break;
+//         case "-":
+//           return displayValue = " - "  ;
+//           break;
+//         case "*":
+//           return displayValue = " * "  ;
+//           break;
+//         case "/":
+//           return displayValue = " / "  ;
+//           break;
+//         case "=":
+//           return displayValue = " = "  ;
+//           break;
+//         case "C":
+//           return displayValue = ""  ;
+//           break;
+          
+//       }
+//     }
+//   }
+// });
+
+// function sumFunction(sum) {
+//   let result = 0;
+//   let i;
+//   for (i = 1; i < arguments.length; i++) {
+//     result += arguments[i] + sum;
+//   }
+//   return result;
+// }
+
+// console.log("SUM FUNCTION:",sumFunction(1,2))
 
